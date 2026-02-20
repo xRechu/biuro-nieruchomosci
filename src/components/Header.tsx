@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const NAV_ITEMS: ReadonlyArray<{ href: string; label: string }> = [
-  { href: "#oferty", label: "Oferty" },
-  { href: "#o-nas", label: "O nas" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/oferty", label: "Oferty" },
+  { href: "/#o-nas", label: "O nas" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 export default function Header() {
@@ -18,15 +18,15 @@ export default function Header() {
           <ul className="site-nav">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                <a href={item.href}>{item.label}</a>
+                <Link href={item.href}>{item.label}</Link>
               </li>
             ))}
           </ul>
         </nav>
 
-        <a className="btn btn-header" href="#kontakt">
+        <Link className="btn btn-header" href="/#kontakt">
           Bezpłatna wycena
-        </a>
+        </Link>
       </div>
     </header>
   );

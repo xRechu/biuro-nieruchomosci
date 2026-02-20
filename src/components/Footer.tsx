@@ -7,27 +7,27 @@ const FOOTER_COLUMNS: ReadonlyArray<{
   {
     title: "Dla klientów",
     links: [
-      { href: "#oferty", label: "Oferty mieszkań" },
-      { href: "#oferty", label: "Oferty domów" },
-      { href: "#kontakt", label: "Zgłoś nieruchomość" },
-      { href: "#kontakt", label: "Wycena online" },
+      { href: "/oferty", label: "Oferty mieszkań" },
+      { href: "/oferty", label: "Oferty domów" },
+      { href: "/#kontakt", label: "Zgłoś nieruchomość" },
+      { href: "/#kontakt", label: "Wycena online" },
     ],
   },
   {
     title: "O agencji",
     links: [
-      { href: "#o-nas", label: "Nasz zespół" },
-      { href: "#kontakt", label: "Kontakt" },
-      { href: "#kontakt", label: "Kariera" },
-      { href: "#kontakt", label: "Blog i poradnik" },
+      { href: "/#o-nas", label: "Nasz zespół" },
+      { href: "/#kontakt", label: "Kontakt" },
+      { href: "/#kontakt", label: "Kariera" },
+      { href: "/#kontakt", label: "Blog i poradnik" },
     ],
   },
   {
     title: "Prawne",
     links: [
-      { href: "#kontakt", label: "Polityka prywatności" },
-      { href: "#kontakt", label: "Regulamin" },
-      { href: "#kontakt", label: "RODO" },
+      { href: "/#kontakt", label: "Polityka prywatności" },
+      { href: "/#kontakt", label: "Regulamin" },
+      { href: "/#kontakt", label: "RODO" },
     ],
   },
 ];
@@ -54,7 +54,7 @@ export default function Footer() {
             <ul>
               {column.links.map((link) => (
                 <li key={`${column.title}-${link.label}`}>
-                  <a href={link.href}>{link.label}</a>
+                  <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -65,9 +65,9 @@ export default function Footer() {
       <div className="container footer-bottom">
         <p>&copy; {year} ModernEstate. Wszelkie prawa zastrzeżone.</p>
         <div className="footer-socials" aria-label="Media społecznościowe">
-          <a href="#kontakt">FB</a>
-          <a href="#kontakt">IG</a>
-          <a href="#kontakt">LI</a>
+          <Link href="/#kontakt">FB</Link>
+          <Link href="/#kontakt">IG</Link>
+          <Link href="/#kontakt">LI</Link>
         </div>
       </div>
     </footer>
