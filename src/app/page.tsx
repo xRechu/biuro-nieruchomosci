@@ -97,6 +97,34 @@ const TESTIMONIALS: ReadonlyArray<Testimonial> = [
     context: "Wynajem lokalu komercyjnego",
     avatar: "https://i.pravatar.cc/120?img=11",
   },
+  {
+    quote:
+      "Mieliśmy skomplikowaną sytuację prawną nieruchomości. Zespół przeprowadził nas przez cały proces i zamknął sprzedaż na bardzo dobrych warunkach.",
+    author: "Karolina Maj",
+    context: "Sprzedaż mieszkania, Kraków",
+    avatar: "https://i.pravatar.cc/120?img=5",
+  },
+  {
+    quote:
+      "Dzięki agentowi znaleźliśmy apartament inwestycyjny off-market, którego nie było na portalach. Konkretna analiza i szybkie działanie.",
+    author: "Michał Wójcik",
+    context: "Zakup inwestycyjny, Wrocław",
+    avatar: "https://i.pravatar.cc/120?img=18",
+  },
+  {
+    quote:
+      "Wynajęcie mieszkania dla naszych pracowników zajęło kilka dni. Pełna opieka, jasne warunki umowy i świetny kontakt na każdym etapie.",
+    author: "Agnieszka Baran",
+    context: "Wynajem korporacyjny, Poznań",
+    avatar: "https://i.pravatar.cc/120?img=24",
+  },
+  {
+    quote:
+      "Doceniam transparentność i regularne raporty z procesu sprzedaży. Wszystkie decyzje były omawiane z wyprzedzeniem i bez niepotrzebnego stresu.",
+    author: "Paweł Jankowski",
+    context: "Sprzedaż domu, Gdynia",
+    avatar: "https://i.pravatar.cc/120?img=60",
+  },
 ];
 
 const STARS = [1, 2, 3, 4, 5] as const;
@@ -131,7 +159,7 @@ export default function Home() {
               <Link href="/oferty" className="btn btn-primary">
                 Zobacz oferty
               </Link>
-              <Link href="/#kontakt" className="btn btn-ghost">
+              <Link href="/kontakt" className="btn btn-ghost">
                 Umów konsultację
               </Link>
             </div>
@@ -228,30 +256,43 @@ export default function Home() {
               <h2 id="opinie-title">Zaufali nam właściciele i inwestorzy</h2>
             </div>
 
-            <div className="testimonials-grid">
-              {TESTIMONIALS.map((testimonial) => (
-                <article className="testimonial-card reveal" key={testimonial.author}>
-                  <p className="testimonial-rating" aria-label="Ocena 5 na 5">
-                    {STARS.map((star) => (
-                      <IconStar key={star} className="star-icon" />
+            <div className="testimonials-marquee-shell">
+              <div className="testimonials-marquee-track">
+                {[0, 1].map((loop) => (
+                  <div
+                    key={`marquee-loop-${loop}`}
+                    className="testimonials-marquee-group"
+                    aria-hidden={loop === 1}
+                  >
+                    {TESTIMONIALS.map((testimonial) => (
+                      <article
+                        className="testimonial-card"
+                        key={`${loop}-${testimonial.author}`}
+                      >
+                        <p className="testimonial-rating" aria-label="Ocena 5 na 5">
+                          {STARS.map((star) => (
+                            <IconStar key={star} className="star-icon" />
+                          ))}
+                        </p>
+                        <p className="testimonial-quote">"{testimonial.quote}"</p>
+                        <div className="testimonial-author">
+                          <Image
+                            src={testimonial.avatar}
+                            alt={`Zdjęcie klienta: ${testimonial.author}`}
+                            width={56}
+                            height={56}
+                            className="testimonial-avatar"
+                          />
+                          <div>
+                            <p className="testimonial-name">{testimonial.author}</p>
+                            <p className="testimonial-context">{testimonial.context}</p>
+                          </div>
+                        </div>
+                      </article>
                     ))}
-                  </p>
-                  <p className="testimonial-quote">"{testimonial.quote}"</p>
-                  <div className="testimonial-author">
-                    <Image
-                      src={testimonial.avatar}
-                      alt={`Zdjęcie klienta: ${testimonial.author}`}
-                      width={56}
-                      height={56}
-                      className="testimonial-avatar"
-                    />
-                    <div>
-                      <p className="testimonial-name">{testimonial.author}</p>
-                      <p className="testimonial-context">{testimonial.context}</p>
-                    </div>
                   </div>
-                </article>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -297,7 +338,10 @@ export default function Home() {
                 </dl>
 
                 <div className="contact-actions">
-                  <Link className="btn btn-dark" href="/?template=kupno#formularz-zgloszeniowy">
+                  <Link
+                    className="btn btn-dark"
+                    href="/kontakt?template=kupno#formularz-zgloszeniowy"
+                  >
                     Napisz do nas
                   </Link>
                   <a className="btn btn-outline-dark" href="tel:+48500600700">

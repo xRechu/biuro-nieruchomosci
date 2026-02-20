@@ -53,7 +53,7 @@ export default function OffersPage() {
                   </button>
                 ))}
               </div>
-              <Link href="/#kontakt" className="btn btn-outline-dark">
+              <Link href="/kontakt#formularz-zgloszeniowy" className="btn btn-outline-dark">
                 Szukasz czegoś konkretnego?
               </Link>
             </div>
@@ -100,8 +100,8 @@ export default function OffersPage() {
                       <Link
                         href={
                           property.type === "sprzedaz"
-                            ? "/?template=kupno#formularz-zgloszeniowy"
-                            : "/?template=wynajem#formularz-zgloszeniowy"
+                            ? "/kontakt?template=kupno#formularz-zgloszeniowy"
+                            : "/kontakt?template=wynajem#formularz-zgloszeniowy"
                         }
                         className="btn btn-primary btn-wide"
                       >

@@ -9,25 +9,25 @@ const FOOTER_COLUMNS: ReadonlyArray<{
     links: [
       { href: "/oferty", label: "Oferty mieszkań" },
       { href: "/oferty", label: "Oferty domów" },
-      { href: "/#kontakt", label: "Zgłoś nieruchomość" },
-      { href: "/#kontakt", label: "Wycena online" },
+      { href: "/kontakt?template=sprzedaz#formularz-zgloszeniowy", label: "Zgłoś nieruchomość" },
+      { href: "/kontakt?template=sprzedaz#formularz-zgloszeniowy", label: "Wycena online" },
     ],
   },
   {
     title: "O agencji",
     links: [
-      { href: "/#o-nas", label: "Nasz zespół" },
-      { href: "/#kontakt", label: "Kontakt" },
-      { href: "/#kontakt", label: "Kariera" },
-      { href: "/#kontakt", label: "Blog i poradnik" },
+      { href: "/agenci", label: "Nasz zespół" },
+      { href: "/o-nas", label: "O nas" },
+      { href: "/kontakt", label: "Kontakt" },
+      { href: "/kontakt", label: "Kariera" },
     ],
   },
   {
     title: "Prawne",
     links: [
-      { href: "/#kontakt", label: "Polityka prywatności" },
-      { href: "/#kontakt", label: "Regulamin" },
-      { href: "/#kontakt", label: "RODO" },
+      { href: "/polityka-prywatnosci", label: "Polityka prywatności" },
+      { href: "/regulamin", label: "Regulamin" },
+      { href: "/polityka-prywatnosci#cookies", label: "RODO i cookies" },
     ],
   },
 ];
@@ -65,9 +65,9 @@ export default function Footer() {
       <div className="container footer-bottom">
         <p>&copy; {year} ModernEstate. Wszelkie prawa zastrzeżone.</p>
         <div className="footer-socials" aria-label="Media społecznościowe">
-          <Link href="/#kontakt">FB</Link>
-          <Link href="/#kontakt">IG</Link>
-          <Link href="/#kontakt">LI</Link>
+          <Link href="/kontakt">FB</Link>
+          <Link href="/kontakt">IG</Link>
+          <Link href="/kontakt">LI</Link>
         </div>
       </div>
     </footer>
