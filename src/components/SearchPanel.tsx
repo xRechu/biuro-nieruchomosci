@@ -58,12 +58,15 @@ export default function SearchPanel() {
                 sprzedaży dopasowanym do Twojej nieruchomości.
               </p>
               <div className="search-sell-actions">
-                <Link href="/#kontakt" className="btn btn-primary">
+                <Link href="/#formularz-zgloszeniowy" className="btn btn-primary">
                   Przejdź do kontaktu
                 </Link>
-                <a className="btn btn-outline-dark" href="mailto:kontakt@modernestate.pl">
+                <Link
+                  className="btn btn-outline-dark"
+                  href="/?template=sprzedaz#formularz-zgloszeniowy"
+                >
                   Wyślij zgłoszenie
-                </a>
+                </Link>
               </div>
             </div>
           ) : (

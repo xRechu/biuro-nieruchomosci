@@ -1,4 +1,5 @@
 import type { ReactElement, SVGProps } from "react";
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
@@ -15,6 +16,7 @@ import {
   IconStar,
   IconZap,
 } from "@/components/LucideIcons";
+import InquiryTemplatesForm from "@/components/InquiryTemplatesForm";
 import SearchPanel from "@/components/SearchPanel";
 import { FEATURED_PROPERTIES, type PropertyDetailIcon } from "@/data/properties";
 
@@ -295,9 +297,9 @@ export default function Home() {
                 </dl>
 
                 <div className="contact-actions">
-                  <a className="btn btn-dark" href="mailto:kontakt@modernestate.pl">
+                  <Link className="btn btn-dark" href="/?template=kupno#formularz-zgloszeniowy">
                     Napisz do nas
-                  </a>
+                  </Link>
                   <a className="btn btn-outline-dark" href="tel:+48500600700">
                     Zadzwoń
                   </a>
@@ -318,6 +320,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <Suspense fallback={null}>
+              <InquiryTemplatesForm />
+            </Suspense>
           </div>
         </section>
       </main>

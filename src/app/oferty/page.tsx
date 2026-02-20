@@ -97,7 +97,14 @@ export default function OffersPage() {
                     </ul>
 
                     <div className="offer-actions">
-                      <Link href="/#kontakt" className="btn btn-primary btn-wide">
+                      <Link
+                        href={
+                          property.type === "sprzedaz"
+                            ? "/?template=kupno#formularz-zgloszeniowy"
+                            : "/?template=wynajem#formularz-zgloszeniowy"
+                        }
+                        className="btn btn-primary btn-wide"
+                      >
                         Zapytaj o ofertę
                       </Link>
                     </div>

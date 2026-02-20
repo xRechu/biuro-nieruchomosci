@@ -351,7 +351,8 @@ section[id] {
 }
 
 .field input,
-.field select {
+.field select,
+.field textarea {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 0.85rem;
@@ -386,7 +387,8 @@ section[id] {
 }
 
 .field input:focus,
-.field select:focus {
+.field select:focus,
+.field textarea:focus {
   outline: none;
   border-color: rgba(62, 123, 253, 0.72);
   box-shadow: 0 0 0 4px rgba(62, 123, 253, 0.16);
@@ -420,6 +422,94 @@ section[id] {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
+}
+
+.inquiry-panel {
+  margin-top: 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background-color: #fff;
+  box-shadow: var(--shadow-soft);
+  padding: clamp(1.15rem, 2.5vw, 1.8rem);
+}
+
+.inquiry-header h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.3vw, 1.6rem);
+  line-height: 1.2;
+}
+
+.inquiry-header p {
+  margin-top: 0.45rem;
+  color: var(--ink-600);
+  max-width: 66ch;
+}
+
+.inquiry-tabs {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 999px;
+  padding: 0.3rem;
+  background-color: var(--surface-muted);
+}
+
+.inquiry-tab {
+  border: 0;
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--ink-600);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.56rem 0.95rem;
+  cursor: pointer;
+}
+
+.inquiry-tab.is-active {
+  background-color: #fff;
+  color: var(--brand-700);
+  box-shadow: var(--shadow-soft);
+}
+
+.inquiry-form {
+  margin-top: 1rem;
+}
+
+.inquiry-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.inquiry-grid-common {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.inquiry-grid-mode {
+  margin-top: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.inquiry-message-field {
+  margin-top: 0.8rem;
+}
+
+.inquiry-message-field textarea {
+  min-height: 11.2rem;
+  resize: vertical;
+}
+
+.inquiry-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.inquiry-note {
+  margin-top: 0.55rem;
+  color: var(--ink-500);
+  font-size: 0.82rem;
 }
 
 .section {
@@ -1058,6 +1148,10 @@ section[id] {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .inquiry-grid-common {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .contact-card {
     grid-template-columns: 1fr;
   }
@@ -1107,6 +1201,11 @@ section[id] {
 
   .search-action {
     grid-column: auto;
+  }
+
+  .inquiry-grid-common,
+  .inquiry-grid-mode {
+    grid-template-columns: 1fr;
   }
 
   .section-header {
