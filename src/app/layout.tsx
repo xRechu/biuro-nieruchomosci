@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Biuro Nieruchomości",
+  title: "ModernEstate | Biuro Nieruchomości",
   description:
-    "Profesjonalne biuro nieruchomości — sprzedaż, wynajem, doradztwo.",
+    "Nowoczesne biuro nieruchomości: sprzedaż, zakup i wynajem premium z pełnym wsparciem ekspertów.",
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
