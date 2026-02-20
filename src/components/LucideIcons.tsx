@@ -135,3 +135,14 @@ export function IconX(props: IconProps) {
     </svg>
   );
 }
+
+export function IconCookie(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...BASE_PROPS} {...props}>
+      <path d="M14.6 3.2a4.6 4.6 0 0 0 5.7 5.7 8.8 8.8 0 1 1-5.7-5.7Z" />
+      <circle cx="9.3" cy="13.2" r="1" />
+      <circle cx="13.8" cy="15.2" r="1" />
+      <circle cx="11.9" cy="10" r="0.95" />
+    </svg>
+  );
+}

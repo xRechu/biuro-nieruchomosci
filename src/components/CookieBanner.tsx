@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { IconCookie } from "@/components/LucideIcons";
 
 type ConsentLevel = "all" | "essential";
 
@@ -110,18 +111,11 @@ export default function CookieBanner() {
         >
           <div className="cookie-banner-inner">
             <div className="cookie-copy">
-              <h2 id="cookie-banner-title">Pliki cookies (RODO)</h2>
+              <h2 id="cookie-banner-title">Cookies (RODO)</h2>
               <p>
-                Korzystamy z plików cookies niezbędnych do działania strony.
-                Opcjonalne cookies analityczne i marketingowe włączamy wyłącznie
-                po Twojej zgodzie.
-              </p>
-              <p>
-                Możesz zmienić decyzję w dowolnym momencie przez przycisk
-                „Ustawienia cookies”.
-              </p>
-              <p>
-                Szczegóły znajdziesz w{" "}
+                Używamy cookies niezbędnych do działania serwisu; cookies
+                analityczne i marketingowe uruchamiamy tylko po Twojej zgodzie.
+                Szczegóły:{" "}
                 <Link href="/polityka-prywatnosci">Polityce Prywatności</Link> i{" "}
                 <Link href="/regulamin">Regulaminie</Link>.
               </p>
@@ -133,14 +127,14 @@ export default function CookieBanner() {
                 className="btn btn-outline-dark"
                 onClick={() => handleConsent("essential")}
               >
-                Tylko niezbędne
+                Niezbędne
               </button>
               <button
                 type="button"
                 className="btn btn-primary"
                 onClick={() => handleConsent("all")}
               >
-                Akceptuj wszystkie
+                Akceptuję
               </button>
             </div>
           </div>
@@ -154,7 +148,7 @@ export default function CookieBanner() {
           onClick={() => setIsOpen(true)}
           aria-label="Otwórz ustawienia cookies"
         >
-          Ustawienia cookies
+          <IconCookie />
         </button>
       ) : null}
     </>
